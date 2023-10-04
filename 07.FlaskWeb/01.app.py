@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')     # localhost:5000/ 을 서비스하기 위한 코드
 def index():
-    return '<h1>Hello Flask</h1><h2>Flask 좋아요!!!</h2>'
+    return '<h1>Hello Flask</h1><h2>Flask 좋아요!!!</h1>'
 
 @app.route('/hello')
 def hello():
