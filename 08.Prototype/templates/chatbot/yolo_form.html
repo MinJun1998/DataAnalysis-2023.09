@@ -1,14 +1,37 @@
 {% extends "base.html" %}
 {% block title %}객체 검출{% endblock %}
+{% block additional_head %}
+    <script>
+        function option() {
+            $('#optionModal').modal('show');
+        }
+    </script>
+{% endblock %}
 {% block subtitle %}객체 검출 - 공공 인공지능 API{% endblock %}
 {% block content %}
-    <form action="/chatbot/yolo" method="post" enctype="multipart/form-data">
         <table class="table table-borderless">
             <tr>
-                <td><label class="col-form-label">검출할 파일</label></td>
-                <td><input type="file" id="image" name="image" class="form-control"></td>
-                <td><button type="submit" class="btn btn-primary">업로드</button></td>
+                <td style="width:15%"><label class="col-form-label">검출할 파일</label></td>
+                <td style="width:60%"><input type="file" id="image" name="image" class="form-control"></td>
+                <td style="width:25%">
+                    <button type="submit" class="btn btn-primary">업로드</button>
+                    <button class="btn btn-secondary" onclick="option()">업로드</button>
+                </td>
             </tr>
         </table>
-    </form>
+{% endblock %}
+{% block additional_body %}
+    <div class="modal" id="optionModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">옵션 선택</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    body 영역
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
